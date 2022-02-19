@@ -19,7 +19,6 @@ def encrypt(line):
         shift = arr.index(line[i]) + key
         if shift >= len(arr):
             shift = shift % 26
-            print(shift)
         encryptedString = encryptedString + arr[shift]
 
     writeToFile(encryptedString)
