@@ -1,20 +1,25 @@
 import sys
 
-arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v","w","x","y","z"]
+arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
+       "w", "x", "y", "z"]
 key = 0
+
 
 def writeToFile(string):
     file = open("output.txt", "w")
     file.write(string)
     file.close()
 
+
 def encrypt(line):
     encryptedString = ""
     global key
     key = key % 26
-
     for i in range(0, len(line)):
         shift = arr.index(line[i]) + key
+        if shift >= len(arr):
+            shift = shift % 26
+            print(shift)
         encryptedString = encryptedString + arr[shift]
 
     writeToFile(encryptedString)
