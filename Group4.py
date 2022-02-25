@@ -23,7 +23,7 @@ def writeToFile(string, outputFile):
     file.write(string)
     file.close()
 
-
+# Encrptyion Function
 def encrypt(line):
     encryptedString = ""
     line = readFile(line)
@@ -36,7 +36,7 @@ def encrypt(line):
         encryptedString = encryptedString + arr[shift]
     return encryptedString
 
-
+# Decryption Function 
 def decrypt(line):
     decryptedString = ""
     line = readFile(line)
@@ -71,7 +71,7 @@ def checkWord(string):
 
         return False
 
-
+#Brute Force
 def bruteForce(file):
     decryptedWord = ''
     finalDecrypt = ""
@@ -95,7 +95,7 @@ def bruteForce(file):
             print(finalDecrypt + ': key = ' + str(key))
         finalDecrypt = ''
         count = 0
-
+# Main
 
 if __name__ == '__main__':
     arguments = len(sys.argv)
