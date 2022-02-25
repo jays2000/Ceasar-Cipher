@@ -84,7 +84,7 @@ def bruteForce(file):
         line = f.readline()
         line = line.lower()
     line = line.split()
-    for key in range(1, 25):
+    for key in range(1, 25): # checking the range 1 - 25 to find the possible key 
         for word in line:
             for letter in word:
                 shift = arr.index(letter) - key
