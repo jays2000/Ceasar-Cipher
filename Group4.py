@@ -44,7 +44,7 @@ def encrypt(line):
 def decrypt(line):
     decryptedString = ""
     line = readFile(line)
-    global key # lobal variable created and the variable is used to read and write in functions
+    global key # global variable created and the variable is used to read and write in functions
     key = key % 26
     for i in range(0, len(line)):#
         shift = arr.index(line[i]) - key
