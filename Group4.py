@@ -50,7 +50,7 @@ def decrypt(line):
         decryptedString = decryptedString + arr[shift]
     return decryptedString
 
-
+# Read File Function
 def readFile(file):
     try:
         with open(file) as f:
@@ -61,7 +61,7 @@ def readFile(file):
     except FileNotFoundError:
         print("Could not open file")
 
-
+# Check Word Function
 def checkWord(string):
     with open('dictionary.txt', 'r') as f:
         lines = f.readlines()
@@ -72,7 +72,7 @@ def checkWord(string):
 
         return False
 
-#Brute Force
+#Brute Force Function
 def bruteForce(file):
     decryptedWord = ''
     finalDecrypt = ""
@@ -104,7 +104,7 @@ if __name__ == '__main__':
         print("Please enter correct arguments")
     else:
 
-        if sys.argv[1] == '-e':
+        if sys.argv[1] == '-e': # encrpting the file
             try:
                 key = int(sys.argv[3])
                 encryptedText = encrypt(sys.argv[2])
@@ -113,7 +113,7 @@ if __name__ == '__main__':
             except ValueError:
                 print("Illegal entry")
 
-        elif sys.argv[1] == '-d':
+        elif sys.argv[1] == '-d':# decrypting the file to get the plain text
             try:
                 key = int(sys.argv[3])
                 decryptedText = decrypt(sys.argv[2])
@@ -122,7 +122,7 @@ if __name__ == '__main__':
             except ValueError:
                 print("Illegal entry")
 
-        elif sys.argv[1] == '-c':
+        elif sys.argv[1] == '-c':# cracking the file to get the plain text
             try:
                 bruteForce(sys.argv[2])
             except ValueError:
