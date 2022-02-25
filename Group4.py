@@ -85,9 +85,9 @@ def bruteForce(file):
         line = line.lower()
     line = line.split()
     for key in range(1, 25): # checking the range 1 - 25 to find the possible key 
-        for word in line:
+        for word in line: 
             for letter in word:
-                shift = arr.index(letter) - key
+                shift = arr.index(letter) - key # matching the key frequency to each letter 
                 if shift < 0:
                     shift = shift + 26
                 decryptedWord = decryptedWord + arr[shift]
