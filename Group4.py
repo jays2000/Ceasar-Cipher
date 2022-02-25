@@ -113,7 +113,7 @@ if __name__ == '__main__':
                 encryptedText = encrypt(sys.argv[2])
                 outputFile = sys.argv[4]
                 writeToFile(encryptedText, outputFile)
-            except ValueError:
+            except ValueError: # catching value exceptions in the file
                 print("Illegal entry")
 
         elif sys.argv[1] == '-d':# decrypting the file to get the plain text
@@ -122,11 +122,11 @@ if __name__ == '__main__':
                 decryptedText = decrypt(sys.argv[2])
                 outputFile = sys.argv[4]
                 writeToFile(decryptedText, outputFile)
-            except ValueError:
+            except ValueError:# catching value exceptions in the file
                 print("Illegal entry")
 
         elif sys.argv[1] == '-c':# cracking the file to get the plain text
             try:
                 bruteForce(sys.argv[2])
-            except ValueError:
+            except ValueError:# catching value exceptions in the file
                 print("illegal entry")
