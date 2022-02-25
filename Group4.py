@@ -46,9 +46,9 @@ def decrypt(line):
     line = readFile(line)
     global key # global variable created and the variable is used to read and write in functions
     key = key % 26
-    for i in range(0, len(line)):#
-        shift = arr.index(line[i]) - key
-        if shift <= len(arr):
+    for i in range(0, len(line)): # checking each ciphertext characters range of each line in the file
+        shift = arr.index(line[i]) - key # shifting the ciphertext using the key
+        if shift <= len(arr): # decrypt the ciphertext
             shift = shift % 26
         decryptedString = decryptedString + arr[shift]
     return decryptedString
@@ -113,7 +113,7 @@ if __name__ == '__main__':
                 encryptedText = encrypt(sys.argv[2])
                 outputFile = sys.argv[4]
                 writeToFile(encryptedText, outputFile)
-            except ValueError: # catching value exceptions in the file
+            except ValueError:
                 print("Illegal entry")
 
         elif sys.argv[1] == '-d':# decrypting the file to get the plain text
@@ -122,11 +122,11 @@ if __name__ == '__main__':
                 decryptedText = decrypt(sys.argv[2])
                 outputFile = sys.argv[4]
                 writeToFile(decryptedText, outputFile)
-            except ValueError:# catching value exceptions in the file
+            except ValueError:
                 print("Illegal entry")
 
         elif sys.argv[1] == '-c':# cracking the file to get the plain text
             try:
                 bruteForce(sys.argv[2])
-            except ValueError:# catching value exceptions in the file
+            except ValueError:
                 print("illegal entry")
