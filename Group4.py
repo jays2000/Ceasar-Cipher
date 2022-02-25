@@ -1,3 +1,6 @@
+# Authors: Justin Swain, LaCreatia Harris, Nicholas Kimmel, Kate Cain
+# Date: February 25, 2022
+#
 # HOW TO RUN
 #
 # Change to whatever directory you have the files saved in. (cd 'directoryname' in cmd on Windows. IDK about you Mac users)
