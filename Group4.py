@@ -13,25 +13,26 @@
 
 import sys
 
+# Plain text
 arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
        "w", "x", "y", "z"]
-key = 0
+key = 0 # varable used for the key encryption and decryption 
 
-
+# Function to write to file
 def writeToFile(string, outputFile):
     file = open(outputFile, "w")
     file.write(string)
     file.close()
 
-# Encrptyion Function
+# Encryption Function
 def encrypt(line):
     encryptedString = ""
     line = readFile(line)
-    global key
+    global key #  global variable created and the variable is used to read and write in functions 
     key = key % 26
-    for i in range(0, len(line)):
-        shift = arr.index(line[i]) + key
-        if shift >= len(arr):
+    for i in range(0, len(line)): # range of each line in the file
+        shift = arr.index(line[i]) + key # shifting the plain text using the key
+        if shift >= len(arr): # encrypt the plain text
             shift = shift % 26
         encryptedString = encryptedString + arr[shift]
     return encryptedString
