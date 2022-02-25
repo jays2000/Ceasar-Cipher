@@ -33,7 +33,7 @@ def encrypt(line):
     line = readFile(line)
     global key #  global variable created and the variable is used to read and write in functions 
     key = key % 26
-    for i in range(0, len(line)): # range of each line in the file
+    for i in range(0, len(line)): # checking each plain text characters range of each line in the file
         shift = arr.index(line[i]) + key # shifting the plain text using the key
         if shift >= len(arr): # encrypt the plain text
             shift = shift % 26
@@ -44,9 +44,9 @@ def encrypt(line):
 def decrypt(line):
     decryptedString = ""
     line = readFile(line)
-    global key
+    global key # lobal variable created and the variable is used to read and write in functions
     key = key % 26
-    for i in range(0, len(line)):
+    for i in range(0, len(line)):#
         shift = arr.index(line[i]) - key
         if shift <= len(arr):
             shift = shift % 26
