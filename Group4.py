@@ -7,7 +7,6 @@
 #
 # Use the commands below. Only encrypt and decrypt work for now
 #
-#
 # python main.py –e <file to be encrypted> key <output file>
 #
 # python main.py –d <file to be decrypted> key <output file>
