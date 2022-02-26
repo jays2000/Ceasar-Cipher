@@ -129,4 +129,4 @@ if __name__ == '__main__':
             try:
                 bruteForce(sys.argv[2])
             except ValueError:
-                print("illegal entry")
+                print("Illegal entry")
