@@ -97,7 +97,8 @@ def bruteForce(file):
         if count / len(line) >= 0.7:
             print(finalDecrypt + ': key = ' + str(key))
         finalDecrypt = ''
-        count = 0
+        count = 0 # count becomes 0 if the 'count/len(line) is greater than or equal to 0.7.
+
 # Main
 
 if __name__ == '__main__':
