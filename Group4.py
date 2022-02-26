@@ -83,20 +83,20 @@ def bruteForce(file):
         line = f.readline()
         line = line.lower()
     line = line.split()
-    for key in range(1, 25): # checking the range 1 - 25 to find the possible key 
+    for key in range(1, 25): # attack is done by trial and error by checking the range from 1-25 to find the possible key by opening the file 'bruteForce.txt' and splitting each line.
         for word in line: 
-            for letter in word:
-                shift = arr.index(letter) - key # matching the key frequency to each letter 
-                if shift < 0:
+            for letter in word: # attack makes the shift value increase by 26 and establishes the decryptedWord along with the array index for the shift value
+                shift = arr.index(letter) - key 
+                if shift < 0: # checking if the shift is less than zero
                     shift = shift + 26
                 decryptedWord = decryptedWord + arr[shift]
-            if checkWord(decryptedWord):
-                count += 1
-            finalDecrypt = finalDecrypt + ' ' + decryptedWord
+            if checkWord(decryptedWord): 
+                count += 1 # this increases the 'count' counter by 1 every time
+            finalDecrypt = finalDecrypt + ' ' + decryptedWord 
             decryptedWord = ''
         if count / len(line) >= 0.7:
             print(finalDecrypt + ': key = ' + str(key))
-        finalDecrypt = ''
+        finalDecrypt = '' #  final decrypt variable then becomes finalDecrypt along with decryptedWord from above
         count = 0 # count becomes 0 if the 'count/len(line) is greater than or equal to 0.7.
 
 # Main
