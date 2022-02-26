@@ -60,10 +60,10 @@ def readFile(file):
             line = line.lower()
             return line
 
-    except FileNotFoundError:
+    except FileNotFoundError: # catching errors if file is not located in the program
         print("Could not open file")
 
-# Check Word Function
+# Check Word Function reading each word from dictionary text file
 def checkWord(string):
     with open('dictionary.txt', 'r') as f:
         lines = f.readlines()
